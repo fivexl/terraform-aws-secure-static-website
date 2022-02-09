@@ -166,22 +166,10 @@ variable "s3_versioning" {
   default     = false
 }
 
-variable "s3_cors_rules" {
-  description = "List of maps containing rules for Cross-Origin Resource Sharing"
-  type        = any
-  default     = []
-}
-
 variable "index_document" {
   description = "Amazon S3 returns this index document when requests are made to the root domain or any of the subfolders."
   type        = string
   default     = "index.html"
-}
-
-variable "error_document" {
-  description = "An absolute path to the document to return in case of a 4XX error."
-  type        = string
-  default     = null
 }
 
 variable "create_monitoring_subscription" {
