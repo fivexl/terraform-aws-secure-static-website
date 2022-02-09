@@ -3,7 +3,7 @@ resource "random_uuid" "lambda_viewer_request" {}
 module "lambda_viewer_request" {
   providers = { aws = aws.us-east-1 }
   source    = "terraform-aws-modules/lambda/aws"
-  version   = "2.16.0"
+  version   = "2.34.0"
   create    = var.create && var.lambda_viewer_request.create
 
   function_name = var.lambda_viewer_request.function_name
@@ -28,7 +28,7 @@ resource "random_uuid" "lambda_viewer_response" {}
 module "lambda_viewer_response" {
   providers = { aws = aws.us-east-1 }
   source    = "terraform-aws-modules/lambda/aws"
-  version   = "2.16.0"
+  version   = "2.34.0"
   create    = var.create && var.lambda_viewer_response.create
 
   function_name = var.lambda_viewer_response.function_name
@@ -53,7 +53,7 @@ resource "random_uuid" "lambda_origin_request" {}
 module "lambda_origin_request" {
   providers = { aws = aws.us-east-1 }
   source    = "terraform-aws-modules/lambda/aws"
-  version   = "2.16.0"
+  version   = "2.34.0"
   create    = var.create && var.lambda_origin_request.create
 
   function_name = var.lambda_origin_request.function_name
@@ -78,7 +78,7 @@ resource "random_uuid" "lambda_origin_response" {}
 module "lambda_origin_response" {
   providers = { aws = aws.us-east-1 }
   source    = "terraform-aws-modules/lambda/aws"
-  version   = "2.16.0"
+  version   = "2.34.0"
   create    = var.create && var.lambda_origin_response.create
 
   function_name = var.lambda_origin_response.function_name

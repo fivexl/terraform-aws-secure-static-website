@@ -10,7 +10,7 @@ locals {
 
 module "cloudfront" {
   source  = "terraform-aws-modules/cloudfront/aws"
-  version = "2.8.0"
+  version = "2.9.2"
 
   create_distribution            = var.create
   aliases                        = var.aliases
