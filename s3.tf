@@ -4,10 +4,6 @@ module "s3_bucket" {
   create_bucket = var.create
   bucket        = var.s3_bucket_name
   acl           = "private"
-  website = {
-    index_document = var.index_document
-    error_document = var.error_document
-  }
   logging = {
     target_bucket = var.logging_bucket_name
     target_prefix = "s3/${var.s3_bucket_name}/"
@@ -15,12 +11,6 @@ module "s3_bucket" {
   versioning = {
     enabled = var.s3_versioning
   }
-  cors_rule = concat([{
-    allowed_methods = ["GET", "HEAD"]
-    allowed_origins = [for alias in var.aliases : "https://${alias}"]
-    allowed_headers = ["*"]
-    max_age_seconds = 3000
-  }], var.s3_cors_rules)
   server_side_encryption_configuration = {
     rule = {
       apply_server_side_encryption_by_default = {
