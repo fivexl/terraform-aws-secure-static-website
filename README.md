@@ -73,19 +73,17 @@ module "web_service" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloudfront"></a> [cloudfront](#module\_cloudfront) | terraform-aws-modules/cloudfront/aws | 2.8.0 |
-| <a name="module_lambda_origin_request"></a> [lambda\_origin\_request](#module\_lambda\_origin\_request) | terraform-aws-modules/lambda/aws | 2.16.0 |
-| <a name="module_lambda_origin_response"></a> [lambda\_origin\_response](#module\_lambda\_origin\_response) | terraform-aws-modules/lambda/aws | 2.16.0 |
-| <a name="module_lambda_viewer_request"></a> [lambda\_viewer\_request](#module\_lambda\_viewer\_request) | terraform-aws-modules/lambda/aws | 2.16.0 |
-| <a name="module_lambda_viewer_response"></a> [lambda\_viewer\_response](#module\_lambda\_viewer\_response) | terraform-aws-modules/lambda/aws | 2.16.0 |
-| <a name="module_s3_bucket"></a> [s3\_bucket](#module\_s3\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.7.0 |
+| <a name="module_cloudfront"></a> [cloudfront](#module\_cloudfront) | terraform-aws-modules/cloudfront/aws | 2.9.2 |
+| <a name="module_lambda_origin_request"></a> [lambda\_origin\_request](#module\_lambda\_origin\_request) | terraform-aws-modules/lambda/aws | 2.34.0 |
+| <a name="module_lambda_origin_response"></a> [lambda\_origin\_response](#module\_lambda\_origin\_response) | terraform-aws-modules/lambda/aws | 2.34.0 |
+| <a name="module_lambda_viewer_request"></a> [lambda\_viewer\_request](#module\_lambda\_viewer\_request) | terraform-aws-modules/lambda/aws | 2.34.0 |
+| <a name="module_lambda_viewer_response"></a> [lambda\_viewer\_response](#module\_lambda\_viewer\_response) | terraform-aws-modules/lambda/aws | 2.34.0 |
+| <a name="module_s3_bucket"></a> [s3\_bucket](#module\_s3\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.13.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_s3_bucket_policy.bucket_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
-| [aws_s3_bucket_public_access_block.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
 | [random_uuid.lambda_origin_request](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
 | [random_uuid.lambda_origin_response](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
 | [random_uuid.lambda_viewer_request](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
