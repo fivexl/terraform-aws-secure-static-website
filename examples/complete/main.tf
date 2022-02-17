@@ -47,7 +47,7 @@ module "website" {
     handler       = var.lambda_viewer_request.handler
     runtime       = var.lambda_viewer_request.runtime
     source_path   = var.lambda_viewer_request.source_path
-    role_name     = module.lambda_at_edge.iam_role_name
+    role_name     = ""
   }
   lambda_viewer_response = {
     create        = var.lambda_viewer_response.create
@@ -56,7 +56,7 @@ module "website" {
     handler       = var.lambda_viewer_response.handler
     runtime       = var.lambda_viewer_response.runtime
     source_path   = var.lambda_viewer_response.source_path
-    role_name     = module.lambda_at_edge.iam_role_name
+    role_name     = ""
   }
   lambda_origin_request = {
     create        = var.lambda_origin_request.create
@@ -65,7 +65,7 @@ module "website" {
     handler       = var.lambda_origin_request.handler
     runtime       = var.lambda_origin_request.runtime
     source_path   = var.lambda_origin_request.source_path
-    role_name     = module.lambda_at_edge.iam_role_name
+    role_name     = ""
   }
   lambda_origin_response = {
     create        = var.lambda_origin_response.create
@@ -74,8 +74,8 @@ module "website" {
     handler       = var.lambda_origin_response.handler
     runtime       = var.lambda_origin_response.runtime
     source_path   = var.lambda_origin_response.source_path
-    role_name     = module.lambda_at_edge.iam_role_name
+    role_name     = ""
   }
-  tags          = var.tags
+  tags = var.tags
 }
 
