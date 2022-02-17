@@ -11,10 +11,10 @@ module "lambda_viewer_request" {
   handler       = var.lambda_viewer_request.handler
   runtime       = var.lambda_viewer_request.runtime
   source_path   = var.lambda_viewer_request.source_path
-  lambda_role   = var.lambda_viewer_request.create ? data.aws_iam_role.lambda_viewer_request[0].arn : ""
+  lambda_role   = var.lambda_viewer_request.create && var.lambda_viewer_request.role_name != "" ? data.aws_iam_role.lambda_viewer_request[0].arn : ""
 
   lambda_at_edge = true
-  create_role    = false
+  create_role    = var.lambda_viewer_request.role_name != "" ? false : true
 
   hash_extra = var.lambda_viewer_request.create ? join(", ", concat([random_uuid.lambda_viewer_request.result], [for file in fileset("${path.root}/${var.lambda_viewer_request.source_path}", "**") : md5(file)])) : ""
 
@@ -36,10 +36,10 @@ module "lambda_viewer_response" {
   handler       = var.lambda_viewer_response.handler
   runtime       = var.lambda_viewer_response.runtime
   source_path   = var.lambda_viewer_response.source_path
-  lambda_role   = var.lambda_viewer_response.create ? data.aws_iam_role.lambda_viewer_response[0].arn : ""
+  lambda_role   = var.lambda_viewer_response.create && var.lambda_viewer_response.role_name != "" ? data.aws_iam_role.lambda_viewer_response[0].arn : ""
 
   lambda_at_edge = true
-  create_role    = false
+  create_role    = var.lambda_viewer_response.role_name != "" ? false : true
 
   hash_extra = var.lambda_viewer_response.create ? join(", ", concat([random_uuid.lambda_viewer_response.result], [for file in fileset("${path.root}/${var.lambda_viewer_response.source_path}", "**") : md5(file)])) : ""
 
@@ -61,10 +61,10 @@ module "lambda_origin_request" {
   handler       = var.lambda_origin_request.handler
   runtime       = var.lambda_origin_request.runtime
   source_path   = var.lambda_origin_request.source_path
-  lambda_role   = var.lambda_origin_request.create ? data.aws_iam_role.lambda_origin_request[0].arn : ""
+  lambda_role   = var.lambda_origin_request.create && var.lambda_origin_request.role_name != "" ? data.aws_iam_role.lambda_origin_request[0].arn : ""
 
   lambda_at_edge = true
-  create_role    = false
+  create_role    = var.lambda_origin_request.role_name != "" ? false : true
 
   hash_extra = var.lambda_origin_request.create ? join(", ", concat([random_uuid.lambda_origin_request.result], [for file in fileset("${path.root}/${var.lambda_origin_request.source_path}", "**") : md5(file)])) : ""
 
@@ -86,10 +86,10 @@ module "lambda_origin_response" {
   handler       = var.lambda_origin_response.handler
   runtime       = var.lambda_origin_response.runtime
   source_path   = var.lambda_origin_response.source_path
-  lambda_role   = var.lambda_origin_response.create ? data.aws_iam_role.lambda_origin_response[0].arn : ""
+  lambda_role   = var.lambda_origin_response.create && var.lambda_origin_response.role_name != "" ? data.aws_iam_role.lambda_origin_response[0].arn : ""
 
   lambda_at_edge = true
-  create_role    = false
+  create_role    = var.lambda_origin_response.role_name != "" ? false : true
 
   hash_extra = var.lambda_origin_response.create ? join(", ", concat([random_uuid.lambda_origin_response.result], [for file in fileset("${path.root}/${var.lambda_origin_response.source_path}", "**") : md5(file)])) : ""
 
