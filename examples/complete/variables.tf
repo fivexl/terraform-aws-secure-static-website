@@ -113,12 +113,6 @@ variable "lambda_origin_response" {
   }
 }
 
-variable "lambda_at_edge_role_name" {
-  description = "IAM role name which will be attached to the Lambda @Edge Function"
-  type        = string
-  default     = ""
-}
-
 variable "tags" {
   description = "Tags"
   type        = map(string)

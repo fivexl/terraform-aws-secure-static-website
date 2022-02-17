@@ -32,5 +32,5 @@ lambda_origin_response = {
 ### Advanced settings
 forwarded_values_query_string = true
 include_cookies               = true
-lambda_at_edge_role_name      = "lambda_at_edge"
+
 
