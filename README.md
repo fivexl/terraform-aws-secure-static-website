@@ -13,7 +13,7 @@ locals {
   s3_bucket_name      = "web-service-${md5(format("%s-%s", data.aws_caller_identity.current.account_id, data.aws_region.current.name))}"
 }
 
-module "web_service" {
+module "website" {
   source                        = "../"
   acm_domain_name               = "*.example.com"
   aliases                       = ["tewfew23d23as.example.com", "zs3ft6ers3as.example.com"]
@@ -56,7 +56,7 @@ module "web_service" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.69 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.69 |
 | <a name="requirement_external"></a> [external](#requirement\_external) | >= 1.0 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 1.0 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >= 2.0 |
@@ -65,8 +65,8 @@ module "web_service" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.69 |
-| <a name="provider_aws.us-east-1"></a> [aws.us-east-1](#provider\_aws.us-east-1) | >= 3.69 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.69 |
+| <a name="provider_aws.us-east-1"></a> [aws.us-east-1](#provider\_aws.us-east-1) | ~> 3.69 |
 | <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
@@ -78,7 +78,7 @@ module "web_service" {
 | <a name="module_lambda_origin_response"></a> [lambda\_origin\_response](#module\_lambda\_origin\_response) | terraform-aws-modules/lambda/aws | 2.34.0 |
 | <a name="module_lambda_viewer_request"></a> [lambda\_viewer\_request](#module\_lambda\_viewer\_request) | terraform-aws-modules/lambda/aws | 2.34.0 |
 | <a name="module_lambda_viewer_response"></a> [lambda\_viewer\_response](#module\_lambda\_viewer\_response) | terraform-aws-modules/lambda/aws | 2.34.0 |
-| <a name="module_s3_bucket"></a> [s3\_bucket](#module\_s3\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.13.0 |
+| <a name="module_s3_bucket"></a> [s3\_bucket](#module\_s3\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.14.1 |
 
 ## Resources
 

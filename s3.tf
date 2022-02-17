@@ -15,7 +15,7 @@ data "aws_iam_policy_document" "s3_policy" {
 
 module "s3_bucket" {
   source        = "terraform-aws-modules/s3-bucket/aws"
-  version       = "2.13.0"
+  version       = "2.14.1"
   create_bucket = var.create
   bucket        = var.s3_bucket_name
   acl           = "private"
