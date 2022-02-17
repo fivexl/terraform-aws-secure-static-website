@@ -1,7 +1,7 @@
 # Example
 
 ## Required
-- TLS in ACM
+- TLS in ACM (us-east-1)
 - DNS HostedZone
 - Apex Zone redirect
 - update `acm_domain_name` and `aliases` before run
