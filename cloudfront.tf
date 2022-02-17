@@ -1,5 +1,5 @@
 locals {
-  origin_id                   = format("S3-Website-%s", module.s3_bucket.s3_bucket_website_endpoint)
+  origin_id                   = format("S3-Website-%s", module.s3_bucket.s3_bucket_bucket_regional_domain_name)
   origin_access_identity      = "s3_bucket"
   lambda_viewer_request       = var.lambda_viewer_request.create ? { viewer-request = { lambda_arn = module.lambda_viewer_request.lambda_function_qualified_arn } } : {}
   lambda_viewer_response      = var.lambda_viewer_response.create ? { viewer-response = { lambda_arn = module.lambda_viewer_response.lambda_function_qualified_arn } } : {}
