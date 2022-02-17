@@ -5,8 +5,6 @@ aliases          = ["website.example.com"]
 error403_response_page_path = "/403.html"
 error404_response_page_path = "/404.html"
 
-s3_cors_rules = []
-
 lambda_viewer_request = {
   create        = true
   function_name = "addBasicAuth"

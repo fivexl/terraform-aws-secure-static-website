@@ -1,8 +1,3 @@
-variable "env_name" {
-  description = "Name for Environment"
-  type        = string
-}
-
 variable "application_name" {
   description = "Name to be used on service_name, ssm prefix, mesh router and route names, mesh service name and for tags"
   type        = string
@@ -32,12 +27,6 @@ variable "error403_response_page_path" {
 variable "error404_response_page_path" {
   description = "Path in S3 for html with 404 template"
   type        = string
-}
-
-variable "s3_cors_rules" {
-  description = "List of maps containing rules for Cross-Origin Resource Sharing"
-  type        = any
-  default     = []
 }
 
 variable "include_cookies" {

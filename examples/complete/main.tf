@@ -76,7 +76,6 @@ module "website" {
     source_path   = var.lambda_origin_response.source_path
     role_name     = module.lambda_at_edge.iam_role_name
   }
-  s3_cors_rules = var.s3_cors_rules
   tags          = var.tags
 }
 
