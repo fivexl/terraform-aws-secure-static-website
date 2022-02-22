@@ -1,6 +1,8 @@
-# Hello World example
+# Static export example
 
-This example shows the most basic idea behind Next. We have 2 pages: `pages/index.js` and `pages/about.js`. The former responds to `/` requests and the latter to `/about`. Using `next/link` you can add hyperlinks between them with universal routing capabilities. The `day` directory shows that you can have subdirectories.
+This example show how to export to static HTML files your Next.js application fetching data from an API to generate a dynamic list of pages.
+
+When trying to run `npm start` it will build and export your pages into the `out` folder and serve them on `localhost:5000`.
 
 # Source
-https://github.com/vercel/next.js/tree/canary/examples/hello-world
+https://github.com/vercel/next.js/tree/canary/examples/with-static-export
