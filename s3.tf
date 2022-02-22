@@ -7,9 +7,7 @@ data "aws_iam_policy_document" "s3_policy" {
       type        = "AWS"
       identifiers = module.cloudfront.cloudfront_origin_access_identity_iam_arns
     }
-    resources = [
-      "arn:aws:s3:::${var.s3_bucket_name}",
-    ]
+    resources = ["arn:aws:s3:::${var.s3_bucket_name}/*"]
   }
 }
 
