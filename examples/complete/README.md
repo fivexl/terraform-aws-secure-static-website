@@ -28,7 +28,6 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_lambda_at_edge"></a> [lambda\_at\_edge](#module\_lambda\_at\_edge) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | 4.2.0 |
 | <a name="module_logging_bucket"></a> [logging\_bucket](#module\_logging\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.14.1 |
 | <a name="module_website"></a> [website](#module\_website) | ../../ | n/a |
 
@@ -36,12 +35,10 @@
 
 | Name | Type |
 |------|------|
-| [aws_iam_policy.lambda_at_edge](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [random_string.random](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [aws_canonical_user_id.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/canonical_user_id) | data source |
 | [aws_cloudfront_log_delivery_canonical_user_id.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/cloudfront_log_delivery_canonical_user_id) | data source |
-| [aws_iam_policy_document.lambda_at_edge](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
@@ -52,20 +49,20 @@
 | <a name="input_aliases"></a> [aliases](#input\_aliases) | Alternate domain names for cloudfront distribution | `list(string)` | n/a | yes |
 | <a name="input_application_name"></a> [application\_name](#input\_application\_name) | Name to be used on service\_name, ssm prefix, mesh router and route names, mesh service name and for tags | `string` | n/a | yes |
 | <a name="input_create_monitoring_subscription"></a> [create\_monitoring\_subscription](#input\_create\_monitoring\_subscription) | If enabled, the resource for monitoring subscription for CloudFront will created. | `bool` | `false` | no |
-| <a name="input_env_name"></a> [env\_name](#input\_env\_name) | Name for Environment | `string` | n/a | yes |
 | <a name="input_error403_response_page_path"></a> [error403\_response\_page\_path](#input\_error403\_response\_page\_path) | Path in S3 for html with 403 template | `string` | n/a | yes |
 | <a name="input_error404_response_page_path"></a> [error404\_response\_page\_path](#input\_error404\_response\_page\_path) | Path in S3 for html with 404 template | `string` | n/a | yes |
 | <a name="input_forwarded_values_query_string"></a> [forwarded\_values\_query\_string](#input\_forwarded\_values\_query\_string) | Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. | `bool` | `false` | no |
 | <a name="input_include_cookies"></a> [include\_cookies](#input\_include\_cookies) | Specifies whether you want CloudFront to include cookies in access logs | `bool` | `false` | no |
-| <a name="input_lambda_at_edge_role_name"></a> [lambda\_at\_edge\_role\_name](#input\_lambda\_at\_edge\_role\_name) | IAM role name which will be attached to the Lambda @Edge Function | `string` | `""` | no |
 | <a name="input_lambda_origin_request"></a> [lambda\_origin\_request](#input\_lambda\_origin\_request) | Lambda@Edge configuration for origin-request | <pre>object({<br>    create        = bool<br>    function_name = string<br>    handler       = string<br>    runtime       = string<br>    source_path   = string<br>  })</pre> | <pre>{<br>  "create": false,<br>  "function_name": "",<br>  "handler": "",<br>  "runtime": "",<br>  "source_path": ""<br>}</pre> | no |
 | <a name="input_lambda_origin_response"></a> [lambda\_origin\_response](#input\_lambda\_origin\_response) | Lambda@Edge configuration for origin-response | <pre>object({<br>    create        = bool<br>    function_name = string<br>    handler       = string<br>    runtime       = string<br>    source_path   = string<br>  })</pre> | <pre>{<br>  "create": false,<br>  "function_name": "",<br>  "handler": "",<br>  "runtime": "",<br>  "source_path": ""<br>}</pre> | no |
 | <a name="input_lambda_viewer_request"></a> [lambda\_viewer\_request](#input\_lambda\_viewer\_request) | Lambda@Edge configuration for viewer-request | <pre>object({<br>    create        = bool<br>    function_name = string<br>    handler       = string<br>    runtime       = string<br>    source_path   = string<br>  })</pre> | <pre>{<br>  "create": false,<br>  "function_name": "",<br>  "handler": "",<br>  "runtime": "",<br>  "source_path": ""<br>}</pre> | no |
 | <a name="input_lambda_viewer_response"></a> [lambda\_viewer\_response](#input\_lambda\_viewer\_response) | Lambda@Edge configuration for viewer-response | <pre>object({<br>    create        = bool<br>    function_name = string<br>    handler       = string<br>    runtime       = string<br>    source_path   = string<br>  })</pre> | <pre>{<br>  "create": false,<br>  "function_name": "",<br>  "handler": "",<br>  "runtime": "",<br>  "source_path": ""<br>}</pre> | no |
-| <a name="input_s3_cors_rules"></a> [s3\_cors\_rules](#input\_s3\_cors\_rules) | List of maps containing rules for Cross-Origin Resource Sharing | `any` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags | `map(string)` | `{}` | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_cloudfront_distribution_id"></a> [cloudfront\_distribution\_id](#output\_cloudfront\_distribution\_id) | The identifier for the CloudFront distribution |
+| <a name="output_s3_bucket_id"></a> [s3\_bucket\_id](#output\_s3\_bucket\_id) | The name of the S3 bucket |
 <!-- END_TF_DOCS -->
